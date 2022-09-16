@@ -16,6 +16,9 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
     npm install -g npm@latest && \
     npm install -g yarn && \
     npm cache clean --force && \
+    # Xdebugのインストール
+    pecl install xdebug && \
+    docker-php-ext-enable xdebug && \
     # Apache rewriteモジュール有効化
     a2enmod rewrite
 
